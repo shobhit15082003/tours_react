@@ -11,14 +11,15 @@ const Cards = (props) => {
             // console.log(id);
     }
   return (
-    <div className='w-full h-full '>
+    <div className='w-full h-full grid grid-cols-3 px-32 gap-8  '>
         {
             (data.length!=0?
             data.map((card)=>(
-                <div>
-              <Card card={card} key={card.id}> </Card>  
-              <button onClick={()=>dataHandler(card.id)}>Not Intereted</button>
-              </div>
+                <div className=''><div className='mt-12 bg-slate-100 shadow-xl p-4 rounded-xl'>
+                
+                <Card card={card} key={card.id}> </Card>  
+                <button className='bg-red-200 flex items-center justify-center mt-5 mx-auto w-9/12 h-[5vh] rounded-xl' onClick={()=>dataHandler(card.id)}>Not Intereted</button>
+                </div></div>
             )):
             <div className=' w-full h-full'><Nothing data={data} setData={setData}></Nothing></div>)
         }
